@@ -1,116 +1,184 @@
 # Vienna Roof Explorer
 
-Interactive map of Vienna buildings, enriched with official city open-data
-(addresses, construction history, zoning, PV potential, ...) and a
-fine-tuned rooftop-feature classifier.
+Interactive proof-of-concept for extracting building and rooftop attributes from
+open geospatial data and aerial imagery in Vienna.
 
-## Project layout
+The application combines official City of Vienna building data with computer
+vision models trained on rooftop imagery. A user can select a building directly
+from an interactive map and inspect both official building information and
+automatically derived rooftop attributes.
 
-```
-run.py                      entry point - python run.py
-build_map.py                regenerates the map - python build_map.py
-requirements.txt            serving dependencies
-requirements-training.txt   training-only dependencies (on top of the above)
-.env.example                copy to .env to override defaults
-
-app/                        the served application
-├── __init__.py             create_app() factory
-├── config.py                single source of truth for every path/URL/constant
-├── routes.py                 /, /api/buildings, /select-building, /health
-├── map_builder.py            builds the Folium map (was generate_map.py)
-├── official_data.py          Vienna WFS lookups (was official_building_data.py)
-├── roof_imagery.py           download/crop/mask roof imagery (was process_roof_imagery.py)
-├── roof_inference.py         runs the fine-tuned classifier
-└── static/map/               generated map HTML lives here
-
-models/                      drop a frozen model copy here for deployment
-data/runtime/                generated per building-selection (gitignored)
-data/bev_bauwerke_vienna.gpkg  optional local BEV dataset (gitignored, absent by default)
-training/                    NOT part of the served app - own dependencies, own lifecycle
-├── notebooks/
-├── data/
-├── outputs/
-└── scripts/
-```
-
-## Setup
-
-```bash
-python -m venv .venv
-source .venv/bin/activate        # or .venv\Scripts\activate on Windows
-pip install -r requirements.txt
-cp .env.example .env             # optional, only if you need to override defaults
-```
-
-If you'll also be retraining the model:
-
-```bash
-pip install -r requirements-training.txt
-```
-
-## Running
-
-```bash
-python build_map.py    # once, and again whenever app/map_builder.py changes
-python run.py
-```
-
-Open the URL it prints (defaults to `http://127.0.0.1:5000`).
-
-## Where the model comes from
-
-`app/config.py` checks two locations, in order:
-
-1. `models/roof_multilabel_resnet18.pth` - a frozen copy for deployment
-2. `training/outputs/models/roof_multilabel_resnet18.pth` - wherever the
-   training notebook's export cell saves it
-
-You don't need to copy anything during development - retrain, and the app
-picks up the new weights on its next restart.
+The project was developed as an AI/ML engineering take-home assessment focused
+on rooftop detection and attribute extraction from open-source data.
 
 ---
 
-## Migrating from the old flat layout
+## Overview
 
-If you're moving from the old `app.py` / `generate_map.py` / ... flat
-layout, here's what changed and what to do with each old file.
+For a selected Vienna building, the application combines:
 
-**Old file → new location (already done for you in this package):**
+- official building geometry and attributes from City of Vienna open data;
+- Vienna orthophoto imagery;
+- a multi-label ResNet18 rooftop-feature classifier;
+- a ResNet18 roof-material classifier;
+- derived roof geometry attributes such as slope, roof type, and estimated
+  surface area;
+- structured JSON output with provenance and confidence information.
 
-| Old | New |
-|---|---|
-| `app.py` | split into `run.py` (entry point) + `app/routes.py` (routes) |
-| `generate_map.py` | split into `build_map.py` (script) + `app/map_builder.py` (logic) |
-| `official_building_data.py` | `app/official_data.py` |
-| `process_roof_imagery.py` | `app/roof_imagery.py` |
-| `roof_inference.py` | `app/roof_inference.py` |
+The application is not restricted to the fixed example buildings included in
+`outputs/`. Any selectable building covered by the configured Vienna data
+sources can be analysed dynamically.
 
-All the actual logic (the WFS queries, the Leaflet/JS in the map, the
-model inference code) is unchanged - only where things live and how they
-find their config changed.
+The fixed examples are included only for reproducibility and inspection.
 
-**Generated files - don't bother moving these, just delete them.** They
-regenerate automatically on the next build/click:
-- `vienna_dynamic_buildings_map.html` → recreated by `build_map.py`
-- `selected_building.geojson`, `selected_roof*.tif`, `selected_roof_masked.*`
-  → recreated on your next building click, now under `data/runtime/`
-- `__pycache__/` → recreated automatically
+---
 
-**Your `model_training/` folder** - copy (or move) its contents into
-`training/`, matching subfolder names: `data/`, `outputs/`, `scripts/`,
-and both notebooks into `notebooks/` (this package only includes
-`yolo_finetune.ipynb`, since that's the only one that was shared here -
-`roof_multilabel_classification.ipynb` needs to come from your existing
-`model_training/notebooks/`).
+## Extracted attributes
 
-**Two files I can't account for**, since I never saw their contents -
-decide what to do with them yourself before deleting anything:
-- `official_data_side_drawer.zip`
-- `README_official_data_poc.txt` (might be worth folding into this
-  README, or keeping as historical notes in `training/` or a `docs/`
-  folder)
+The generated building record can contain information such as:
 
-**`lod2_cache/` and `backup/`** from your old `app` folder weren't part
-of anything I've built with you in this conversation - if they're still
-in active use by something, bring them across too; otherwise they look
-like leftovers from earlier experiments.
+### Official building data
+
+Depending on availability from the source datasets:
+
+- building ID;
+- address;
+- building footprint;
+- construction-related information;
+- zoning / building metadata;
+- photovoltaic potential;
+- other available Vienna open-data attributes.
+
+### Roof geometry
+
+Derived from the official building footprint and available geometric
+information:
+
+- roof outline proxy;
+- projected roof area;
+- estimated roof surface area;
+- mean roof slope;
+- derived roof type.
+
+### Roof material
+
+The material classifier predicts one of:
+
+- `gravel`
+- `metal`
+- `shingle`
+- `tile`
+- `unknown`
+
+### Rooftop features
+
+The multi-label classifier can independently detect:
+
+- `chimney`
+- `roof-vegetation`
+- `rooftop-hvac`
+- `skylight`
+- `solar`
+
+Because this is a multi-label task, several rooftop features may be present on
+the same building.
+
+---
+
+## Confidence and provenance
+
+Different attributes have different notions of certainty. The application keeps
+these semantics separate rather than treating every value as a model
+confidence.
+
+- **Official data** retains its source provenance and is not assigned an
+  artificial ML probability.
+- **Geometrically derived attributes** use engineering confidence values where
+  appropriate.
+- **ML predictions** expose the raw neural-network probability.
+- ML probabilities are **not calibrated probabilities** and should not be
+  interpreted as formal statistical confidence.
+
+This distinction is also preserved in the generated JSON records.
+
+---
+
+## Important geometry assumption
+
+The roof outline currently uses the official City of Vienna building footprint
+as a **plan-view approximation of the roof boundary**.
+
+It is therefore not an image-segmentation result.
+
+The same official footprint is used to crop/mask the orthophoto used by the ML
+models. Consequently, the resulting roof geometry should be interpreted as an
+official-geometry proxy rather than an independently detected roof polygon.
+
+This approximation works well for a proof of concept but can differ from the
+visible roof boundary because of:
+
+- roof overhang;
+- orthophoto parallax;
+- complex roof structures;
+- neighbouring structures;
+- differences between cadastral/building geometry and the visible roof.
+
+A production system could replace this component with dedicated roof
+segmentation or higher-detail 3D building data.
+
+---
+
+## Project structure
+
+```text
+vienna-roof-explorer/
+├── app/
+│   ├── __init__.py
+│   ├── common.py
+│   ├── config.py
+│   ├── features.py
+│   ├── map_builder.py
+│   ├── material.py
+│   ├── official_data.py
+│   ├── roof_imagery.py
+│   ├── roof_inference.py
+│   ├── routes.py
+│   └── static/
+│       └── map/
+│
+├── data/
+│   └── runtime/
+│       └── .gitkeep
+│
+├── models/
+│   ├── roof_material_resnet18.pth
+│   └── roof_multilabel_resnet18.pth
+│
+├── outputs/
+│   ├── buildings/
+│   ├── overlays/
+│   ├── roof_attributes.json
+│   └── roof_attributes_summary.csv
+│
+├── tests/
+│   ├── conftest.py
+│   ├── test_official_data.py
+│   └── test_routes.py
+│
+├── training/
+│   ├── data/                 # local training data, excluded from Git
+│   └── notebooks/
+│       ├── roof_material_classification.ipynb
+│       └── roof_multilabel_classification.ipynb
+│
+├── .dockerignore
+├── .env.example
+├── .gitignore
+├── build_map.py
+├── compose.yaml
+├── Dockerfile
+├── pytest.ini
+├── requirements-dev.txt
+├── requirements.txt
+├── run.py
+└── README.md
