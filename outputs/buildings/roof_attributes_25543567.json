@@ -1,0 +1,110 @@
+{
+  "address": "Björnsongasse 8",
+  "address_code": "108309",
+  "building_id": 25543567,
+  "confidence": {
+    "estimated_surface_area": {
+      "basis": "Projected area corrected using one official mean roof slope.",
+      "kind": "engineering_confidence",
+      "score": 0.75
+    },
+    "mean_roof_slope": {
+      "basis": "Direct matched value from Stadt Wien Photovoltaik Potenzial 2022.",
+      "kind": "official_source",
+      "score": 1
+    },
+    "projected_area": {
+      "basis": "Official FMZK footprint used as the plan-view roof-area proxy.",
+      "kind": "engineering_confidence",
+      "score": 0.95
+    },
+    "roof_material": {
+      "basis": "Raw classifier output; not a calibrated statistical confidence.",
+      "kind": "model_probability",
+      "score": 0.7367
+    },
+    "roof_outline": {
+      "basis": "High-confidence official FMZK geometry used as a plan-view roof approximation; not an image-segmentation probability.",
+      "kind": "engineering",
+      "score": 0.95
+    },
+    "roof_type": {
+      "basis": "Derived from official mean roof slope (20.4°).",
+      "kind": "engineering_confidence",
+      "score": 0.95
+    }
+  },
+  "roof": {
+    "estimated_surface_area_m2": 290.4,
+    "material": "tile",
+    "mean_slope_deg": 20.4,
+    "outline": {
+      "coordinates": [
+        [
+          [
+            16.29019049,
+            48.1660161
+          ],
+          [
+            16.29018518,
+            48.16609855
+          ],
+          [
+            16.28996687,
+            48.166091
+          ],
+          [
+            16.28996948,
+            48.16603281
+          ],
+          [
+            16.28997071,
+            48.16600547
+          ],
+          [
+            16.29005123,
+            48.16600694
+          ],
+          [
+            16.29005751,
+            48.16590748
+          ],
+          [
+            16.29019718,
+            48.16591221
+          ],
+          [
+            16.29019049,
+            48.1660161
+          ]
+        ]
+      ],
+      "type": "Polygon"
+    },
+    "outline_method": "Official building footprint used as plan-view roof approximation",
+    "projected_area_m2": 272.2,
+    "type": "Pitched",
+    "type_basis": "Derived from official mean roof slope (20.4°)."
+  },
+  "rooftop_features": {
+    "chimney": {
+      "label": "Chimney",
+      "model_probability": 0.922
+    }
+  },
+  "score_semantics": "official_source and engineering_confidence scores describe provenance/derivation reliability; model_probability values are raw neural-network outputs and are not calibrated confidence estimates.",
+  "solar_potential": {
+    "annual_yield_kwh_m2a": 1065.389,
+    "pv_area_good_m2": 166,
+    "pv_area_medium_m2": 57,
+    "pv_area_very_good_m2": 5,
+    "theoretical_pv_capacity_kwp": 11
+  },
+  "sources_used": {
+    "imagery": "Stadt Wien Orthophoto",
+    "roof_material": "Fine-tuned ResNet18",
+    "roof_outline": "Stadt Wien – Baukörpermodell / FMZK",
+    "roof_slope_and_solar": "Stadt Wien – Photovoltaik Potenzial 2022",
+    "rooftop_features": "Fine-tuned ResNet18"
+  }
+}

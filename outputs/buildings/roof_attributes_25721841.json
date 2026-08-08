@@ -1,0 +1,197 @@
+{
+  "address": "Furtwänglerplatz 44A",
+  "address_code": "233555",
+  "building_id": 25721841,
+  "confidence": {
+    "estimated_surface_area": {
+      "basis": "Projected area corrected using one official mean roof slope.",
+      "kind": "engineering_confidence",
+      "score": 0.75
+    },
+    "mean_roof_slope": {
+      "basis": "Direct matched value from Stadt Wien Photovoltaik Potenzial 2022.",
+      "kind": "official_source",
+      "score": 1
+    },
+    "projected_area": {
+      "basis": "Official FMZK footprint used as the plan-view roof-area proxy.",
+      "kind": "engineering_confidence",
+      "score": 0.95
+    },
+    "roof_material": {
+      "basis": "Raw classifier output; not a calibrated statistical confidence.",
+      "kind": "model_probability",
+      "score": 0.7346
+    },
+    "roof_outline": {
+      "basis": "High-confidence official FMZK geometry used as a plan-view roof approximation; not an image-segmentation probability.",
+      "kind": "engineering",
+      "score": 0.95
+    },
+    "roof_type": {
+      "basis": "Derived from official mean roof slope (13.2°).",
+      "kind": "engineering_confidence",
+      "score": 0.85
+    }
+  },
+  "roof": {
+    "estimated_surface_area_m2": 177.5,
+    "material": "gravel",
+    "mean_slope_deg": 13.2,
+    "outline": {
+      "coordinates": [
+        [
+          [
+            16.28769251,
+            48.16660299
+          ],
+          [
+            16.2876376,
+            48.16660421
+          ],
+          [
+            16.28763839,
+            48.16662009
+          ],
+          [
+            16.28761401,
+            48.16662063
+          ],
+          [
+            16.2876159,
+            48.16665871
+          ],
+          [
+            16.28756835,
+            48.16665976
+          ],
+          [
+            16.28757062,
+            48.16670552
+          ],
+          [
+            16.28753425,
+            48.16670632
+          ],
+          [
+            16.287535,
+            48.16672157
+          ],
+          [
+            16.28752008,
+            48.16672189
+          ],
+          [
+            16.28752313,
+            48.16678352
+          ],
+          [
+            16.28763081,
+            48.16678113
+          ],
+          [
+            16.28762922,
+            48.16674882
+          ],
+          [
+            16.28768912,
+            48.16674749
+          ],
+          [
+            16.28769965,
+            48.16674726
+          ],
+          [
+            16.28769677,
+            48.16668901
+          ],
+          [
+            16.287696,
+            48.16667348
+          ],
+          [
+            16.28769587,
+            48.16667079
+          ],
+          [
+            16.28769574,
+            48.16666809
+          ],
+          [
+            16.2876956,
+            48.16666539
+          ],
+          [
+            16.28769547,
+            48.16666269
+          ],
+          [
+            16.28769534,
+            48.16666
+          ],
+          [
+            16.2876952,
+            48.1666573
+          ],
+          [
+            16.28769507,
+            48.16665461
+          ],
+          [
+            16.28769494,
+            48.16665191
+          ],
+          [
+            16.2876948,
+            48.16664921
+          ],
+          [
+            16.28769467,
+            48.16664651
+          ],
+          [
+            16.28769454,
+            48.16664382
+          ],
+          [
+            16.28769441,
+            48.16664112
+          ],
+          [
+            16.28769427,
+            48.16663843
+          ],
+          [
+            16.2876933,
+            48.16661887
+          ],
+          [
+            16.28769251,
+            48.16660299
+          ]
+        ]
+      ],
+      "type": "Polygon"
+    },
+    "outline_method": "Official building footprint used as plan-view roof approximation",
+    "projected_area_m2": 172.8,
+    "type": "Low-slope",
+    "type_basis": "Derived from official mean roof slope (13.2°)."
+  },
+  "rooftop_features": {},
+  "score_semantics": "official_source and engineering_confidence scores describe provenance/derivation reliability; model_probability values are raw neural-network outputs and are not calibrated confidence estimates.",
+  "solar_potential": {
+    "annual_yield_kwh_m2a": 1122.293,
+    "pv_area_good_m2": 96,
+    "pv_area_medium_m2": 7,
+    "pv_area_very_good_m2": 0,
+    "theoretical_pv_capacity_kwp": 4
+  },
+  "sources_used": {
+    "imagery": "Stadt Wien Orthophoto",
+    "roof_material": "Fine-tuned ResNet18",
+    "roof_outline": "Stadt Wien – Baukörpermodell / FMZK",
+    "roof_slope_and_solar": "Stadt Wien – Photovoltaik Potenzial 2022",
+    "rooftop_features": "Fine-tuned ResNet18"
+  }
+}

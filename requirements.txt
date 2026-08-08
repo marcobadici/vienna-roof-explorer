@@ -1,0 +1,27 @@
+# Web server
+flask>=3.0
+gunicorn>=22.0
+python-dotenv>=1.0
+
+# Geospatial
+geopandas>=0.14
+shapely>=2.0
+pandas>=2.0
+numpy>=1.26
+
+# Map / tiles
+folium>=0.15
+branca>=0.7
+contextily>=1.5
+rasterio>=1.3
+
+# Roof imagery
+pillow>=10.0
+matplotlib>=3.8
+
+# HTTP
+requests>=2.31
+
+# Roof-model inference
+torch>=2.2
+torchvision>=0.17

@@ -1,0 +1,170 @@
+{
+  "address": "Hermesstraße 2",
+  "address_code": "242530",
+  "building_id": 25752801,
+  "confidence": {
+    "estimated_surface_area": {
+      "basis": "Projected area corrected using one official mean roof slope.",
+      "kind": "engineering_confidence",
+      "score": 0.75
+    },
+    "mean_roof_slope": {
+      "basis": "Direct matched value from Stadt Wien Photovoltaik Potenzial 2022.",
+      "kind": "official_source",
+      "score": 1
+    },
+    "projected_area": {
+      "basis": "Official FMZK footprint used as the plan-view roof-area proxy.",
+      "kind": "engineering_confidence",
+      "score": 0.95
+    },
+    "roof_material": {
+      "basis": "Raw classifier output; not a calibrated statistical confidence.",
+      "kind": "model_probability",
+      "score": 0.6323
+    },
+    "roof_outline": {
+      "basis": "High-confidence official FMZK geometry used as a plan-view roof approximation; not an image-segmentation probability.",
+      "kind": "engineering",
+      "score": 0.95
+    },
+    "roof_type": {
+      "basis": "Derived from official mean roof slope (13.6°).",
+      "kind": "engineering_confidence",
+      "score": 0.85
+    }
+  },
+  "roof": {
+    "estimated_surface_area_m2": 1135.7,
+    "material": "metal",
+    "mean_slope_deg": 13.6,
+    "outline": {
+      "coordinates": [
+        [
+          [
+            16.2786092,
+            48.16778567
+          ],
+          [
+            16.27864991,
+            48.16779132
+          ],
+          [
+            16.27864982,
+            48.16779164
+          ],
+          [
+            16.27861366,
+            48.16790825
+          ],
+          [
+            16.27873017,
+            48.16792441
+          ],
+          [
+            16.27869693,
+            48.16803162
+          ],
+          [
+            16.27858043,
+            48.16801546
+          ],
+          [
+            16.27856788,
+            48.16805592
+          ],
+          [
+            16.27854022,
+            48.16814512
+          ],
+          [
+            16.27881939,
+            48.16818386
+          ],
+          [
+            16.27884705,
+            48.16809465
+          ],
+          [
+            16.27886783,
+            48.16802766
+          ],
+          [
+            16.27894437,
+            48.16803828
+          ],
+          [
+            16.27898677,
+            48.16790151
+          ],
+          [
+            16.27891024,
+            48.16789089
+          ],
+          [
+            16.27892899,
+            48.16783038
+          ],
+          [
+            16.27896032,
+            48.16772934
+          ],
+          [
+            16.2788402,
+            48.16771267
+          ],
+          [
+            16.27879671,
+            48.16770664
+          ],
+          [
+            16.27868115,
+            48.1676906
+          ],
+          [
+            16.27867397,
+            48.16771373
+          ],
+          [
+            16.27863325,
+            48.16770808
+          ],
+          [
+            16.2786092,
+            48.16778567
+          ]
+        ]
+      ],
+      "type": "Polygon"
+    },
+    "outline_method": "Official building footprint used as plan-view roof approximation",
+    "projected_area_m2": 1103.8,
+    "type": "Low-slope",
+    "type_basis": "Derived from official mean roof slope (13.6°)."
+  },
+  "rooftop_features": {
+    "rooftop-hvac": {
+      "label": "Rooftop HVAC",
+      "model_probability": 0.6286
+    },
+    "skylight": {
+      "label": "Skylight",
+      "model_probability": 0.7561
+    }
+  },
+  "score_semantics": "official_source and engineering_confidence scores describe provenance/derivation reliability; model_probability values are raw neural-network outputs and are not calibrated confidence estimates.",
+  "solar_potential": {
+    "annual_yield_kwh_m2a": 1116.351,
+    "pv_area_good_m2": 609,
+    "pv_area_medium_m2": 69,
+    "pv_area_very_good_m2": 45,
+    "theoretical_pv_capacity_kwp": 30
+  },
+  "sources_used": {
+    "imagery": "Stadt Wien Orthophoto",
+    "roof_material": "Fine-tuned ResNet18",
+    "roof_outline": "Stadt Wien – Baukörpermodell / FMZK",
+    "roof_slope_and_solar": "Stadt Wien – Photovoltaik Potenzial 2022",
+    "rooftop_features": "Fine-tuned ResNet18"
+  }
+}

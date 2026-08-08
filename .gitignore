@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.ipynb_checkpoints/
+
+# Environment
+.env
+
+# Generated at runtime - regenerated automatically, never hand-edited
+data/runtime/*
+!data/runtime/.gitkeep
+app/static/map/*.html
+
+# Optional local dataset, not committed
+data/bev_bauwerke_vienna.gpkg
+
+# Training data/outputs are large and regenerable from the notebooks -
+# track the notebooks and scripts, not the bulk data or checkpoints.
+training/data/labeled/images/
+training/data/raw/
+training/outputs/models/*.pth
+training/outputs/figures/*
+
+# Training datasets
+training/data/
+training/outputs/

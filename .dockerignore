@@ -1,0 +1,31 @@
+.git
+.github
+.venv
+venv
+__pycache__
+*.py[cod]
+*.egg-info
+.pytest_cache
+.ipynb_checkpoints
+
+.env
+
+# Local/runtime outputs
+data/runtime/*
+!data/runtime/.gitkeep
+app/static/map/*.html
+
+# Optional local enrichment dataset
+data/bev_bauwerke_vienna.gpkg
+
+# Training material is not needed to serve the application.
+training/data
+training/notebooks
+training/scripts
+training/outputs
+training/archive
+
+# Local development / report artifacts
+tests
+*.zip
+*.log
