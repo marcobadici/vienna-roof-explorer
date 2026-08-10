@@ -1,3 +1,4 @@
+````
 # Design & Reasoning
 
 ## 1. Source selection and overall approach
@@ -6,11 +7,17 @@ The system uses **official City of Vienna building geometry as the spatial ancho
 
 The primary geometry source is the City of Vienna **Baukörpermodell / FMZK**. FMZK was selected because it provides authoritative, georeferenced building geometry together with identifiers that can be reused when combining information from other municipal datasets. Where a building consists of several FMZK parts, the implementation groups those parts using the Vienna building reference and unions their geometries into a single building representation. The footprint area is calculated after transforming the geometry to the metric CRS **EPSG:32633 / UTM Zone 33N**.
 
-The primary visual source is the **Stadt Wien orthophoto service**. A high-resolution top-down image is well suited to roof-level visual analysis because rooftop objects such as chimneys, skylights, HVAC installations and solar panels require substantially finer spatial detail than medium-resolution satellite imagery. The map and processing pipeline use the Vienna orthophoto directly, with OpenStreetMap available only as an alternative visual basemap and not as an attribute source.
+The primary visual source is the **Stadt Wien orthophoto service**. A high-resolution top-down image is well suited to roof-level visual analysis because rooftop objects such as chimneys, skylights, HVAC installations and solar panels require substantially finer spatial detail than medium-resolution satellite imagery. According to the City of Vienna product information, the downloadable orthophoto is provided at **15 cm resolution**, covers the **entire Vienna city area**, and is produced as a **True Orthophoto**, so building roofs are represented in corrected planimetric position rather than being displaced by building lean. This is particularly useful when matching imagery to authoritative building polygons. The map and processing pipeline use the Vienna orthophoto directly, with OpenStreetMap available only as an alternative visual basemap and not as an attribute source.
+
+Top-down imagery reduces many of the roof-visibility and alignment problems found in street-level imagery, although vegetation, shadows, roof overhangs and complex multi-plane geometry can still make individual visual attributes ambiguous. These limitations are handled by restricting the extracted attributes to those that can be supported by the selected sources and by keeping provenance and confidence semantics explicit.
 
 Other possible sources were considered conceptually. **Sentinel-2** offers excellent coverage and temporal availability but is too coarse for reliable detection of small building-level rooftop elements. **Street-level imagery** can add useful façade information, but roof visibility is often incomplete and image-to-building alignment is more difficult. **Oblique imagery, LiDAR or detailed 3D city models** would be valuable for explicit roof-plane reconstruction, but were not necessary for the scope of this focused proof of concept.
 
-The implementation relies on publicly accessible City of Vienna geospatial services and does not require a paid commercial imagery API or API key for the default workflow.
+The default workflow relies on publicly accessible City of Vienna geospatial services and does not require a paid commercial imagery API or API key. City of Vienna MA 41 Open Government Data is available free of charge under **CC BY 4.0**, subject to the required attribution `Datenquelle: Stadt Wien - data.wien.gv.at`.
+
+Official source information:
+- [Stadt Wien – Orthofoto product information](https://www.wien.gv.at/stadtplanung/orthofoto-produktinformation)
+- [Stadt Wien – Orthofoto data and usage conditions](https://www.wien.gv.at/stadtentwicklung/stadtvermessung/geodaten/orthofoto/daten.html)
 
 ---
 
@@ -143,6 +150,8 @@ This is intentionally a building-level estimate based on the available official 
 
 Two separately trained **ResNet18** classifiers are used.
 
+The labelled rooftop datasets were created manually using **Roboflow** as the annotation and dataset-management interface. Roboflow was used to create and organise the rooftop-feature and roof-material labels; the underlying roof imagery was derived from the Vienna orthophoto workflow used in this project. The labels were therefore manually assigned rather than generated automatically.
+
 ### Rooftop features
 
 The rooftop-feature task is formulated as **multi-label classification**, because several elements can occur on the same roof simultaneously.
@@ -245,7 +254,7 @@ Approximate or derived attributes use engineering-confidence values. In the curr
 - estimated surface area: **0.75**;
 - slope-derived roof type: **0.95** for flat or pitched and **0.85** for low-slope.
 
-The basis for each value is included with the result.
+These engineering-confidence values are **heuristic reliability indicators for the proof of concept rather than empirically calibrated probabilities**. Their purpose is to communicate the expected reliability of a transparent geometric approximation, and the basis for each value is included with the result.
 
 **Model probability**
 
@@ -323,3 +332,4 @@ With additional development time, the most valuable extensions would be:
 - persistent model and data version tracking.
 
 These extensions build naturally on the current component while retaining the same principle used throughout the proof of concept: **combine the source best suited to each attribute instead of forcing one data source or model to provide information it does not directly support.**
+````
