@@ -1,7 +1,7 @@
 {
-  "address": "Björnsongasse 8",
-  "address_code": "108309",
-  "building_id": 25543567,
+  "address": "Greyledergasse 2",
+  "address_code": "123797",
+  "building_id": 25538424,
   "confidence": {
     "estimated_surface_area": {
       "basis": "Projected area corrected using one official mean roof slope.",
@@ -21,84 +21,116 @@
     "roof_material": {
       "basis": "Raw classifier output; not a calibrated statistical confidence.",
       "kind": "model_probability",
-      "score": 0.7367
+      "score": 0.9963
     },
     "roof_outline": {
       "basis": "High-confidence official FMZK geometry used as a plan-view roof approximation; not an image-segmentation probability.",
-      "kind": "engineering",
+      "kind": "engineering_confidence",
       "score": 0.95
     },
     "roof_type": {
-      "basis": "Derived from official mean roof slope (20.4°).",
+      "basis": "Derived from official mean roof slope (29.4°).",
       "kind": "engineering_confidence",
       "score": 0.95
     }
   },
   "roof": {
-    "estimated_surface_area_m2": 290.4,
+    "estimated_surface_area_m2": 144.2,
     "material": "tile",
-    "mean_slope_deg": 20.4,
+    "mean_slope_deg": 29.4,
     "outline": {
       "coordinates": [
         [
           [
-            16.29019049,
-            48.1660161
+            16.28283718,
+            48.15620239
           ],
           [
-            16.29018518,
-            48.16609855
+            16.28280996,
+            48.15614176
           ],
           [
-            16.28996687,
-            48.166091
+            16.28278952,
+            48.1561458
           ],
           [
-            16.28996948,
-            48.16603281
+            16.28278671,
+            48.15613951
           ],
           [
-            16.28997071,
-            48.16600547
+            16.28268051,
+            48.1561607
           ],
           [
-            16.29005123,
-            48.16600694
+            16.28263046,
+            48.15617068
           ],
           [
-            16.29005751,
-            48.16590748
+            16.28262724,
+            48.15617132
           ],
           [
-            16.29019718,
-            48.16591221
+            16.28261718,
+            48.15617333
           ],
           [
-            16.29019049,
-            48.1660161
+            16.28264829,
+            48.15624511
+          ],
+          [
+            16.28269682,
+            48.15623551
+          ],
+          [
+            16.28270299,
+            48.15624936
+          ],
+          [
+            16.28273969,
+            48.1562421
+          ],
+          [
+            16.28273352,
+            48.15622824
+          ],
+          [
+            16.28281902,
+            48.15621147
+          ],
+          [
+            16.28281674,
+            48.15620652
+          ],
+          [
+            16.28283718,
+            48.15620239
           ]
         ]
       ],
       "type": "Polygon"
     },
     "outline_method": "Official building footprint used as plan-view roof approximation",
-    "projected_area_m2": 272.2,
+    "projected_area_m2": 125.6,
     "type": "Pitched",
-    "type_basis": "Derived from official mean roof slope (20.4°)."
+    "type_basis": "Derived from official mean roof slope (29.4°)."
   },
   "rooftop_features": {
     "chimney": {
       "label": "Chimney",
-      "model_probability": 0.922
+      "model_probability": 0.9788
+    },
+    "solar": {
+      "label": "Solar panels",
+      "model_probability": 0.7594
     }
   },
   "score_semantics": "official_source and engineering_confidence scores describe provenance/derivation reliability; model_probability values are raw neural-network outputs and are not calibrated confidence estimates.",
   "solar_potential": {
-    "annual_yield_kwh_m2a": 1065.389,
-    "pv_area_good_m2": 166,
-    "pv_area_medium_m2": 57,
-    "pv_area_very_good_m2": 5,
-    "theoretical_pv_capacity_kwp": 11
+    "annual_yield_kwh_m2a": 1135.191,
+    "pv_area_good_m2": 32,
+    "pv_area_medium_m2": 20,
+    "pv_area_very_good_m2": 32,
+    "theoretical_pv_capacity_kwp": 4
   },
   "sources_used": {
     "imagery": "Stadt Wien Orthophoto",

@@ -1,0 +1,218 @@
+{
+  "address": "Prater 119",
+  "address_code": "248449",
+  "building_id": 25769050,
+  "confidence": {
+    "estimated_surface_area": {
+      "basis": "Projected area corrected using one official mean roof slope.",
+      "kind": "engineering_confidence",
+      "score": null
+    },
+    "mean_roof_slope": {
+      "basis": null,
+      "kind": "official_source",
+      "score": null
+    },
+    "projected_area": {
+      "basis": "Official FMZK footprint used as the plan-view roof-area proxy.",
+      "kind": "engineering_confidence",
+      "score": 0.95
+    },
+    "roof_material": {
+      "basis": "Raw classifier output; not a calibrated statistical confidence.",
+      "kind": "model_probability",
+      "score": 0.7794
+    },
+    "roof_outline": {
+      "basis": "High-confidence official FMZK geometry used as a plan-view roof approximation; not an image-segmentation probability.",
+      "kind": "engineering_confidence",
+      "score": 0.95
+    },
+    "roof_type": {
+      "basis": null,
+      "kind": null,
+      "score": null
+    }
+  },
+  "roof": {
+    "estimated_surface_area_m2": null,
+    "material": "metal",
+    "mean_slope_deg": null,
+    "outline": {
+      "coordinates": [
+        [
+          [
+            16.40377216,
+            48.21425358
+          ],
+          [
+            16.40371156,
+            48.21436881
+          ],
+          [
+            16.40357257,
+            48.21433585
+          ],
+          [
+            16.40354548,
+            48.21432932
+          ],
+          [
+            16.40353373,
+            48.21432649
+          ],
+          [
+            16.40353209,
+            48.21432609
+          ],
+          [
+            16.40350536,
+            48.21431964
+          ],
+          [
+            16.40350444,
+            48.21431943
+          ],
+          [
+            16.40345733,
+            48.21430853
+          ],
+          [
+            16.40345614,
+            48.21430825
+          ],
+          [
+            16.40342942,
+            48.21430178
+          ],
+          [
+            16.4034283,
+            48.21430152
+          ],
+          [
+            16.40341708,
+            48.21429885
+          ],
+          [
+            16.40341589,
+            48.21429857
+          ],
+          [
+            16.40338924,
+            48.21429226
+          ],
+          [
+            16.40338801,
+            48.21429197
+          ],
+          [
+            16.40330771,
+            48.21427284
+          ],
+          [
+            16.40330666,
+            48.21427259
+          ],
+          [
+            16.40327971,
+            48.21426627
+          ],
+          [
+            16.40327834,
+            48.21426594
+          ],
+          [
+            16.40326726,
+            48.21426331
+          ],
+          [
+            16.40309287,
+            48.21422192
+          ],
+          [
+            16.40308369,
+            48.21421973
+          ],
+          [
+            16.40302109,
+            48.21420478
+          ],
+          [
+            16.40301984,
+            48.21420448
+          ],
+          [
+            16.40299316,
+            48.21419814
+          ],
+          [
+            16.40299198,
+            48.21419786
+          ],
+          [
+            16.40295214,
+            48.21418838
+          ],
+          [
+            16.40295058,
+            48.21418801
+          ],
+          [
+            16.40291148,
+            48.21417871
+          ],
+          [
+            16.40291008,
+            48.21417837
+          ],
+          [
+            16.40288599,
+            48.21417264
+          ],
+          [
+            16.40304086,
+            48.21388527
+          ],
+          [
+            16.40346863,
+            48.21398742
+          ],
+          [
+            16.40377216,
+            48.21425358
+          ]
+        ]
+      ],
+      "type": "Polygon"
+    },
+    "outline_method": "Official building footprint used as plan-view roof approximation",
+    "projected_area_m2": 1887.7,
+    "type": null,
+    "type_basis": null
+  },
+  "rooftop_features": {
+    "rooftop-hvac": {
+      "label": "Rooftop HVAC",
+      "model_probability": 0.571
+    },
+    "solar": {
+      "label": "Solar panels",
+      "model_probability": 0.8716
+    }
+  },
+  "score_semantics": "official_source and engineering_confidence scores describe provenance/derivation reliability; model_probability values are raw neural-network outputs and are not calibrated confidence estimates.",
+  "solar_potential": {
+    "annual_yield_kwh_m2a": null,
+    "pv_area_good_m2": null,
+    "pv_area_medium_m2": null,
+    "pv_area_very_good_m2": null,
+    "theoretical_pv_capacity_kwp": null
+  },
+  "sources_used": {
+    "imagery": "Stadt Wien Orthophoto",
+    "roof_material": "Fine-tuned ResNet18",
+    "roof_outline": "Stadt Wien – Baukörpermodell / FMZK",
+    "roof_slope_and_solar": "Stadt Wien – Photovoltaik Potenzial 2022",
+    "rooftop_features": "Fine-tuned ResNet18"
+  }
+}

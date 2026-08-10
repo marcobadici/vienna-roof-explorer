@@ -14,27 +14,14 @@ _cache = common.ModelCache(
     candidates=Config.ROOF_MATERIAL_MODEL_PATH_CANDIDATES,
 )
 
-
 def classify_roof_material(image_path: Path) -> dict:
     """
-    Run the fine-tuned roof-material classifier on one masked roof image
-    and return the predicted material plus the full class distribution.
+    Run the fine-tuned roof-material multiclass classifier on one
+    masked roof image.
 
-    UNVERIFIED ASSUMPTION - no checkpoint was available to introspect
-    when this was written (unlike classify_roof() in features.py, which
-    was tested against the real weights). This assumes single-label
-    softmax classification: one dominant material per roof, competing
-    probabilities that sum to 1. That's the natural framing for "roof
-    material" and matches how it came up in conversation, but if the
-    model was actually trained multi-label (e.g. distinct materials
-    across different sections of a complex roof), this needs to switch
-    to sigmoid + per-class threshold instead, matching classify_roof().
-
-    Also unverified: the checkpoint uses the same self-describing
-    structure as the rooftop-features model (classes / image_size /
-    imagenet_mean / imagenet_std / architecture / model_state_dict). If
-    it doesn't, common.load_checkpoint() will raise a clear KeyError
-    naming the missing field rather than failing silently or guessing.
+    The model applies softmax across the checkpoint-defined material
+    classes and returns the highest-probability class together with
+    the full class-probability distribution.
     """
 
     image_path = Path(image_path)

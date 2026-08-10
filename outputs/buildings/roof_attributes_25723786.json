@@ -1,7 +1,7 @@
 {
-  "address": "Hermesstraße 2",
-  "address_code": "242530",
-  "building_id": 25752801,
+  "address": "Laverangasse 58",
+  "address_code": "234164",
+  "building_id": 25723786,
   "confidence": {
     "estimated_surface_area": {
       "basis": "Projected area corrected using one official mean roof slope.",
@@ -21,144 +21,144 @@
     "roof_material": {
       "basis": "Raw classifier output; not a calibrated statistical confidence.",
       "kind": "model_probability",
-      "score": 0.6323
+      "score": 0.5352
     },
     "roof_outline": {
       "basis": "High-confidence official FMZK geometry used as a plan-view roof approximation; not an image-segmentation probability.",
-      "kind": "engineering",
+      "kind": "engineering_confidence",
       "score": 0.95
     },
     "roof_type": {
-      "basis": "Derived from official mean roof slope (13.6°).",
+      "basis": "Derived from official mean roof slope (22.6°).",
       "kind": "engineering_confidence",
-      "score": 0.85
+      "score": 0.95
     }
   },
   "roof": {
-    "estimated_surface_area_m2": 1135.7,
-    "material": "metal",
-    "mean_slope_deg": 13.6,
+    "estimated_surface_area_m2": 284,
+    "material": "shingle",
+    "mean_slope_deg": 22.6,
     "outline": {
       "coordinates": [
         [
           [
-            16.2786092,
-            48.16778567
+            16.29259331,
+            48.16483471
           ],
           [
-            16.27864991,
-            48.16779132
+            16.29261029,
+            48.164856
           ],
           [
-            16.27864982,
-            48.16779164
+            16.29256175,
+            48.16487331
           ],
           [
-            16.27861366,
-            48.16790825
+            16.29250306,
+            48.16489425
           ],
           [
-            16.27873017,
-            48.16792441
+            16.29251234,
+            48.16490587
           ],
           [
-            16.27869693,
-            48.16803162
+            16.29245162,
+            48.16492753
           ],
           [
-            16.27858043,
-            48.16801546
+            16.29251152,
+            48.16500266
           ],
           [
-            16.27856788,
-            48.16805592
+            16.29254279,
+            48.1649915
           ],
           [
-            16.27854022,
-            48.16814512
+            16.29255206,
+            48.16500313
           ],
           [
-            16.27881939,
-            48.16818386
+            16.29264018,
+            48.16497168
           ],
           [
-            16.27884705,
-            48.16809465
+            16.29269916,
+            48.16495064
           ],
           [
-            16.27886783,
-            48.16802766
+            16.29271995,
+            48.16494322
           ],
           [
-            16.27894437,
-            48.16803828
+            16.29275905,
+            48.16492927
           ],
           [
-            16.27898677,
-            48.16790151
+            16.29276169,
+            48.16492833
           ],
           [
-            16.27891024,
-            48.16789089
+            16.29273533,
+            48.16489526
           ],
           [
-            16.27892899,
-            48.16783038
+            16.29275119,
+            48.16488949
           ],
           [
-            16.27896032,
-            48.16772934
+            16.29274958,
+            48.16488747
           ],
           [
-            16.2788402,
-            48.16771267
+            16.29272556,
+            48.16485734
           ],
           [
-            16.27879671,
-            48.16770664
+            16.29270962,
+            48.16486302
           ],
           [
-            16.27868115,
-            48.1676906
+            16.29268326,
+            48.16482996
           ],
           [
-            16.27867397,
-            48.16771373
+            16.29266629,
+            48.16480867
           ],
           [
-            16.27863325,
-            48.16770808
+            16.29264836,
+            48.16481507
           ],
           [
-            16.2786092,
-            48.16778567
+            16.29259331,
+            48.16483471
           ]
         ]
       ],
       "type": "Polygon"
     },
     "outline_method": "Official building footprint used as plan-view roof approximation",
-    "projected_area_m2": 1103.8,
-    "type": "Low-slope",
-    "type_basis": "Derived from official mean roof slope (13.6°)."
+    "projected_area_m2": 262.2,
+    "type": "Pitched",
+    "type_basis": "Derived from official mean roof slope (22.6°)."
   },
   "rooftop_features": {
+    "roof-vegetation": {
+      "label": "Roof vegetation",
+      "model_probability": 0.5771
+    },
     "rooftop-hvac": {
       "label": "Rooftop HVAC",
-      "model_probability": 0.6286
-    },
-    "skylight": {
-      "label": "Skylight",
-      "model_probability": 0.7561
+      "model_probability": 0.7591
     }
   },
   "score_semantics": "official_source and engineering_confidence scores describe provenance/derivation reliability; model_probability values are raw neural-network outputs and are not calibrated confidence estimates.",
   "solar_potential": {
-    "annual_yield_kwh_m2a": 1116.351,
-    "pv_area_good_m2": 609,
-    "pv_area_medium_m2": 69,
-    "pv_area_very_good_m2": 45,
-    "theoretical_pv_capacity_kwp": 30
+    "annual_yield_kwh_m2a": 1114.981,
+    "pv_area_good_m2": 100,
+    "pv_area_medium_m2": 22,
+    "pv_area_very_good_m2": 12,
+    "theoretical_pv_capacity_kwp": 7
   },
   "sources_used": {
     "imagery": "Stadt Wien Orthophoto",

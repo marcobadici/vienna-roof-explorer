@@ -4,6 +4,10 @@ __pycache__/
 *.egg-info/
 .ipynb_checkpoints/
 
+# Virtual environments
+.venv/
+venv/
+
 # Environment
 .env
 
@@ -15,13 +19,7 @@ app/static/map/*.html
 # Optional local dataset, not committed
 data/bev_bauwerke_vienna.gpkg
 
-# Training data/outputs are large and regenerable from the notebooks -
-# track the notebooks and scripts, not the bulk data or checkpoints.
-training/data/labeled/images/
-training/data/raw/
-training/outputs/models/*.pth
-training/outputs/figures/*
-
-# Training datasets
+# Training data and generated training outputs
+# Training notebooks remain tracked under training/notebooks/.
 training/data/
 training/outputs/

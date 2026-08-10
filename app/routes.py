@@ -779,7 +779,7 @@ def select_building():
             "plan-view roof approximation"
         ),
         "confidence": 0.95,
-        "confidence_kind": "engineering",
+        "confidence_kind": "engineering_confidence",
         "confidence_basis": (
             "High-confidence official FMZK geometry used as a "
             "plan-view roof approximation; not an image-segmentation probability."

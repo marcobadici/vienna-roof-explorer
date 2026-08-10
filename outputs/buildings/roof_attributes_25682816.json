@@ -1,0 +1,286 @@
+{
+  "address": "Postgasse 19",
+  "address_code": "000609",
+  "building_id": 25682816,
+  "confidence": {
+    "estimated_surface_area": {
+      "basis": "Projected area corrected using one official mean roof slope.",
+      "kind": "engineering_confidence",
+      "score": 0.75
+    },
+    "mean_roof_slope": {
+      "basis": "Direct matched value from Stadt Wien Photovoltaik Potenzial 2022.",
+      "kind": "official_source",
+      "score": 1
+    },
+    "projected_area": {
+      "basis": "Official FMZK footprint used as the plan-view roof-area proxy.",
+      "kind": "engineering_confidence",
+      "score": 0.95
+    },
+    "roof_material": {
+      "basis": "Raw classifier output; not a calibrated statistical confidence.",
+      "kind": "model_probability",
+      "score": 0.887
+    },
+    "roof_outline": {
+      "basis": "High-confidence official FMZK geometry used as a plan-view roof approximation; not an image-segmentation probability.",
+      "kind": "engineering_confidence",
+      "score": 0.95
+    },
+    "roof_type": {
+      "basis": "Derived from official mean roof slope (19.2°).",
+      "kind": "engineering_confidence",
+      "score": 0.95
+    }
+  },
+  "roof": {
+    "estimated_surface_area_m2": 855.7,
+    "material": "gravel",
+    "mean_slope_deg": 19.2,
+    "outline": {
+      "coordinates": [
+        [
+          [
+            16.37875737,
+            48.21108227
+          ],
+          [
+            16.37874081,
+            48.21108426
+          ],
+          [
+            16.37871994,
+            48.21108675
+          ],
+          [
+            16.37860859,
+            48.2111001
+          ],
+          [
+            16.37860969,
+            48.21110436
+          ],
+          [
+            16.37861134,
+            48.21110449
+          ],
+          [
+            16.37861924,
+            48.21113545
+          ],
+          [
+            16.37859687,
+            48.21113809
+          ],
+          [
+            16.37860577,
+            48.21117154
+          ],
+          [
+            16.37862745,
+            48.21116903
+          ],
+          [
+            16.37863733,
+            48.21120753
+          ],
+          [
+            16.37864119,
+            48.21122077
+          ],
+          [
+            16.37863935,
+            48.21122099
+          ],
+          [
+            16.37864052,
+            48.21122686
+          ],
+          [
+            16.37864772,
+            48.21122602
+          ],
+          [
+            16.37869377,
+            48.21122005
+          ],
+          [
+            16.37869419,
+            48.21122
+          ],
+          [
+            16.37869505,
+            48.21121991
+          ],
+          [
+            16.3786955,
+            48.21122166
+          ],
+          [
+            16.3786988,
+            48.21123437
+          ],
+          [
+            16.37916646,
+            48.21117978
+          ],
+          [
+            16.37916281,
+            48.21116558
+          ],
+          [
+            16.37921542,
+            48.21115917
+          ],
+          [
+            16.37921267,
+            48.21114874
+          ],
+          [
+            16.37922725,
+            48.21114703
+          ],
+          [
+            16.3792333,
+            48.2111463
+          ],
+          [
+            16.37922723,
+            48.2111231
+          ],
+          [
+            16.37922453,
+            48.21111294
+          ],
+          [
+            16.37920388,
+            48.21111537
+          ],
+          [
+            16.37918995,
+            48.21106253
+          ],
+          [
+            16.37918628,
+            48.21104857
+          ],
+          [
+            16.37918085,
+            48.211028
+          ],
+          [
+            16.37917879,
+            48.21102019
+          ],
+          [
+            16.37916655,
+            48.21097388
+          ],
+          [
+            16.37916456,
+            48.21096636
+          ],
+          [
+            16.37916325,
+            48.21096142
+          ],
+          [
+            16.3790199,
+            48.21097848
+          ],
+          [
+            16.37901286,
+            48.21097932
+          ],
+          [
+            16.37901408,
+            48.2109841
+          ],
+          [
+            16.37901605,
+            48.21099187
+          ],
+          [
+            16.3790276,
+            48.21103773
+          ],
+          [
+            16.37902928,
+            48.21104385
+          ],
+          [
+            16.37903072,
+            48.21104952
+          ],
+          [
+            16.37902884,
+            48.21104975
+          ],
+          [
+            16.37902226,
+            48.21105053
+          ],
+          [
+            16.37901754,
+            48.2110511
+          ],
+          [
+            16.37900692,
+            48.21105237
+          ],
+          [
+            16.37900313,
+            48.21103766
+          ],
+          [
+            16.37897488,
+            48.21104091
+          ],
+          [
+            16.37877482,
+            48.21106392
+          ],
+          [
+            16.37877497,
+            48.2110645
+          ],
+          [
+            16.378779,
+            48.21107968
+          ],
+          [
+            16.37875737,
+            48.21108227
+          ]
+        ]
+      ],
+      "type": "Polygon"
+    },
+    "outline_method": "Official building footprint used as plan-view roof approximation",
+    "projected_area_m2": 808.3,
+    "type": "Pitched",
+    "type_basis": "Derived from official mean roof slope (19.2°)."
+  },
+  "rooftop_features": {
+    "rooftop-hvac": {
+      "label": "Rooftop HVAC",
+      "model_probability": 0.7317
+    }
+  },
+  "score_semantics": "official_source and engineering_confidence scores describe provenance/derivation reliability; model_probability values are raw neural-network outputs and are not calibrated confidence estimates.",
+  "solar_potential": {
+    "annual_yield_kwh_m2a": 1123.323,
+    "pv_area_good_m2": 343,
+    "pv_area_medium_m2": 79,
+    "pv_area_very_good_m2": 34,
+    "theoretical_pv_capacity_kwp": 24
+  },
+  "sources_used": {
+    "imagery": "Stadt Wien Orthophoto",
+    "roof_material": "Fine-tuned ResNet18",
+    "roof_outline": "Stadt Wien – Baukörpermodell / FMZK",
+    "roof_slope_and_solar": "Stadt Wien – Photovoltaik Potenzial 2022",
+    "rooftop_features": "Fine-tuned ResNet18"
+  }
+}

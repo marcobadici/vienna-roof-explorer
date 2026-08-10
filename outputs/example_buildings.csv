@@ -1,0 +1,9 @@
+﻿building_id,address_code,address,has_model_input,has_overlay,has_visual_example
+25537828,002785,Ferdinandstraße 25,False,False,False
+25538424,123797,Greyledergasse 2,True,True,True
+25649228,110282,Laverangasse 62,True,True,True
+25682816,000609,Postgasse 19,False,False,False
+25688838,109950,Rosenhügelstraße 192,True,True,True
+25723786,234164,Laverangasse 58,True,True,True
+25743295,239339,Winkelbreiten 7,True,True,True
+25769050,248449,Prater 119,False,False,False

@@ -75,7 +75,7 @@ class Config:
     ROOF_FEATURES_MODEL_FILENAME = "roof_multilabel_resnet18.pth"
     ROOF_FEATURES_MODEL_PATH_CANDIDATES = [
         MODEL_DIR / ROOF_FEATURES_MODEL_FILENAME,
-        PROJECT_ROOT / "training" / "outputs" / "models"
+        PROJECT_ROOT / "training" / "outputs" / "roof_multilabel" / "models"
         / ROOF_FEATURES_MODEL_FILENAME,
     ]
 

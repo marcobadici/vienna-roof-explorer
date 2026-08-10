@@ -1,9 +1,9 @@
-﻿building_id,address,roof_type,material,projected_area_m2,estimated_surface_area_m2,mean_slope_deg,detected_features
-25543567,Björnsongasse 8,Pitched,tile,272.2,290.4,20.4,Chimney
-25577993,Riedelgasse 8,Pitched,tile,147.5,153.7,16.3,Chimney
-25585094,Gallgasse 76,Pitched,tile,99.7,115.7,30.5,Chimney
-25604333,Griepenkerlgasse 14,Low-slope,gravel,5851.6,5989.6,12.3,"Skylight, Solar panels"
-25679482,Björnsongasse 23,Pitched,gravel,141.8,161.4,28.5,Solar panels
-25721841,Furtwänglerplatz 44A,Low-slope,gravel,172.8,177.5,13.2,None
-25743292,Klitschgasse 7,Low-slope,unknown,372.7,383.8,13.8,"Roof vegetation, Rooftop HVAC"
-25752801,Hermesstraße 2,Low-slope,metal,1103.8,1135.7,13.6,"Rooftop HVAC, Skylight"
+﻿building_id,address_code,address,roof_type,roof_type_basis,mean_roof_slope_deg,projected_area_m2,estimated_surface_area_m2,roof_material,roof_material_probability,detected_features,feature_probabilities,annual_yield_kwh_m2a,pv_area_medium_m2,pv_area_good_m2,pv_area_very_good_m2,theoretical_pv_capacity_kwp,has_model_input,has_overlay,has_visual_example
+25537828,002785,Ferdinandstraße 25,Pitched,Derived from official mean roof slope (18.8°).,18.8,3533.5,3731.8,gravel,0.9341,Rooftop HVAC; Skylight; Solar panels,"{""rooftop-hvac"": 0.9315, ""skylight"": 0.5744, ""solar"": 0.72}",1138.788,493.0,1593.0,342.0,123.0,False,False,False
+25538424,123797,Greyledergasse 2,Pitched,Derived from official mean roof slope (29.4°).,29.4,125.6,144.2,tile,0.9963,Chimney; Solar panels,"{""chimney"": 0.9788, ""solar"": 0.7594}",1135.191,20.0,32.0,32.0,4.0,True,True,True
+25649228,110282,Laverangasse 62,Pitched,Derived from official mean roof slope (19.5°).,19.5,147.0,155.9,tile,0.5312,Chimney,"{""chimney"": 0.959}",1195.054,35.0,38.0,33.0,5.0,True,True,True
+25682816,000609,Postgasse 19,Pitched,Derived from official mean roof slope (19.2°).,19.2,808.3,855.7,gravel,0.887,Rooftop HVAC,"{""rooftop-hvac"": 0.7317}",1123.323,79.0,343.0,34.0,24.0,False,False,False
+25688838,109950,Rosenhügelstraße 192,Low-slope,Derived from official mean roof slope (9.3°).,9.3,9033.3,9152.6,gravel,0.915,Rooftop HVAC; Skylight; Solar panels,"{""rooftop-hvac"": 0.7852, ""skylight"": 0.5587, ""solar"": 0.7745}",1128.883,626.0,5775.0,197.0,276.0,True,True,True
+25723786,234164,Laverangasse 58,Pitched,Derived from official mean roof slope (22.6°).,22.6,262.2,284.0,shingle,0.5352,Roof vegetation; Rooftop HVAC,"{""roof-vegetation"": 0.5771, ""rooftop-hvac"": 0.7591}",1114.981,22.0,100.0,12.0,7.0,True,True,True
+25743295,239339,Winkelbreiten 7,Low-slope,Derived from official mean roof slope (13.8°).,13.8,296.0,304.8,unknown,0.6665,Roof vegetation; Rooftop HVAC,"{""roof-vegetation"": 0.8729, ""rooftop-hvac"": 0.9327}",1155.647,58.0,1944.0,164.0,97.0,True,True,True
+25769050,248449,Prater 119,,,,1887.7,,metal,0.7794,Rooftop HVAC; Solar panels,"{""rooftop-hvac"": 0.571, ""solar"": 0.8716}",,,,,,False,False,False

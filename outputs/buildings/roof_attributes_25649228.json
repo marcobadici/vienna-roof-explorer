@@ -1,7 +1,7 @@
 {
-  "address": "Björnsongasse 23",
-  "address_code": "103460",
-  "building_id": 25679482,
+  "address": "Laverangasse 62",
+  "address_code": "110282",
+  "building_id": 25649228,
   "confidence": {
     "estimated_surface_area": {
       "basis": "Projected area corrected using one official mean roof slope.",
@@ -21,84 +21,108 @@
     "roof_material": {
       "basis": "Raw classifier output; not a calibrated statistical confidence.",
       "kind": "model_probability",
-      "score": 0.333
+      "score": 0.5312
     },
     "roof_outline": {
       "basis": "High-confidence official FMZK geometry used as a plan-view roof approximation; not an image-segmentation probability.",
-      "kind": "engineering",
+      "kind": "engineering_confidence",
       "score": 0.95
     },
     "roof_type": {
-      "basis": "Derived from official mean roof slope (28.5°).",
+      "basis": "Derived from official mean roof slope (19.5°).",
       "kind": "engineering_confidence",
       "score": 0.95
     }
   },
   "roof": {
-    "estimated_surface_area_m2": 161.4,
-    "material": "gravel",
-    "mean_slope_deg": 28.5,
+    "estimated_surface_area_m2": 155.9,
+    "material": "tile",
+    "mean_slope_deg": 19.5,
     "outline": {
       "coordinates": [
         [
           [
-            16.29082949,
-            48.16476501
+            16.2924135,
+            48.16457975
           ],
           [
-            16.29082215,
-            48.16485953
+            16.29235383,
+            48.16460147
           ],
           [
-            16.29064081,
-            48.16485289
+            16.29237106,
+            48.16462264
           ],
           [
-            16.29064135,
-            48.1648448
+            16.29229771,
+            48.16464768
           ],
           [
-            16.29064149,
-            48.16484273
+            16.292338,
+            48.16469805
           ],
           [
-            16.29064331,
-            48.16481548
+            16.29234445,
+            48.16469608
           ],
           [
-            16.29064346,
-            48.16481323
+            16.29235694,
+            48.16471434
           ],
           [
-            16.29064707,
-            48.16475927
+            16.29241597,
+            48.16469341
           ],
           [
-            16.29082949,
-            48.16476501
+            16.29242228,
+            48.16470132
+          ],
+          [
+            16.29246034,
+            48.16468785
+          ],
+          [
+            16.29245402,
+            48.16467984
+          ],
+          [
+            16.29252879,
+            48.16465334
+          ],
+          [
+            16.29246796,
+            48.16457651
+          ],
+          [
+            16.29242392,
+            48.16459255
+          ],
+          [
+            16.2924135,
+            48.16457975
           ]
         ]
       ],
       "type": "Polygon"
     },
     "outline_method": "Official building footprint used as plan-view roof approximation",
-    "projected_area_m2": 141.8,
+    "projected_area_m2": 147,
     "type": "Pitched",
-    "type_basis": "Derived from official mean roof slope (28.5°)."
+    "type_basis": "Derived from official mean roof slope (19.5°)."
   },
   "rooftop_features": {
-    "solar": {
-      "label": "Solar panels",
-      "model_probability": 0.8984
+    "chimney": {
+      "label": "Chimney",
+      "model_probability": 0.959
     }
   },
   "score_semantics": "official_source and engineering_confidence scores describe provenance/derivation reliability; model_probability values are raw neural-network outputs and are not calibrated confidence estimates.",
   "solar_potential": {
-    "annual_yield_kwh_m2a": 1197.287,
-    "pv_area_good_m2": 33,
-    "pv_area_medium_m2": 46,
-    "pv_area_very_good_m2": 23,
-    "theoretical_pv_capacity_kwp": 4
+    "annual_yield_kwh_m2a": 1195.054,
+    "pv_area_good_m2": 38,
+    "pv_area_medium_m2": 35,
+    "pv_area_very_good_m2": 33,
+    "theoretical_pv_capacity_kwp": 5
   },
   "sources_used": {
     "imagery": "Stadt Wien Orthophoto",

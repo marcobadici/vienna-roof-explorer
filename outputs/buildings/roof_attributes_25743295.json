@@ -1,7 +1,7 @@
 {
-  "address": "Riedelgasse 8",
-  "address_code": "113605",
-  "building_id": 25577993,
+  "address": "Winkelbreiten 7",
+  "address_code": "239339",
+  "building_id": 25743295,
   "confidence": {
     "estimated_surface_area": {
       "basis": "Projected area corrected using one official mean roof slope.",
@@ -21,100 +21,136 @@
     "roof_material": {
       "basis": "Raw classifier output; not a calibrated statistical confidence.",
       "kind": "model_probability",
-      "score": 0.9586
+      "score": 0.6665
     },
     "roof_outline": {
       "basis": "High-confidence official FMZK geometry used as a plan-view roof approximation; not an image-segmentation probability.",
-      "kind": "engineering",
+      "kind": "engineering_confidence",
       "score": 0.95
     },
     "roof_type": {
-      "basis": "Derived from official mean roof slope (16.3°).",
+      "basis": "Derived from official mean roof slope (13.8°).",
       "kind": "engineering_confidence",
-      "score": 0.95
+      "score": 0.85
     }
   },
   "roof": {
-    "estimated_surface_area_m2": 153.7,
-    "material": "tile",
-    "mean_slope_deg": 16.3,
+    "estimated_surface_area_m2": 304.8,
+    "material": "unknown",
+    "mean_slope_deg": 13.8,
     "outline": {
       "coordinates": [
         [
           [
-            16.28888996,
-            48.16266314
+            16.28605218,
+            48.16473127
           ],
           [
-            16.28889049,
-            48.16266537
+            16.28605094,
+            48.16473236
           ],
           [
-            16.28890269,
-            48.16271709
+            16.28604178,
+            48.16474042
           ],
           [
-            16.28877404,
-            48.16273008
+            16.28597204,
+            48.16480181
           ],
           [
-            16.2887673,
-            48.16269976
+            16.28593648,
+            48.1648331
           ],
           [
-            16.28876345,
-            48.16268244
+            16.28596838,
+            48.16484932
           ],
           [
-            16.2887583,
-            48.16265922
+            16.28597466,
+            48.16485251
           ],
           [
-            16.28874511,
-            48.16259986
+            16.28597733,
+            48.16485387
           ],
           [
-            16.28874462,
-            48.16259764
+            16.28598206,
+            48.16485627
           ],
           [
-            16.28874365,
-            48.16259328
+            16.28597547,
+            48.16486208
           ],
           [
-            16.28880065,
-            48.16258773
+            16.28608172,
+            48.16491611
           ],
           [
-            16.28887056,
-            48.16258092
+            16.28611688,
+            48.16488517
           ],
           [
-            16.28888996,
-            48.16266314
+            16.28612736,
+            48.16487594
+          ],
+          [
+            16.28612248,
+            48.16487346
+          ],
+          [
+            16.28610019,
+            48.16486213
+          ],
+          [
+            16.28617559,
+            48.16479575
+          ],
+          [
+            16.28625387,
+            48.16472686
+          ],
+          [
+            16.2862175,
+            48.16470837
+          ],
+          [
+            16.2861611,
+            48.16467969
+          ],
+          [
+            16.28612921,
+            48.16466347
+          ],
+          [
+            16.28605218,
+            48.16473127
           ]
         ]
       ],
       "type": "Polygon"
     },
     "outline_method": "Official building footprint used as plan-view roof approximation",
-    "projected_area_m2": 147.5,
-    "type": "Pitched",
-    "type_basis": "Derived from official mean roof slope (16.3°)."
+    "projected_area_m2": 296,
+    "type": "Low-slope",
+    "type_basis": "Derived from official mean roof slope (13.8°)."
   },
   "rooftop_features": {
-    "chimney": {
-      "label": "Chimney",
-      "model_probability": 0.9932
+    "roof-vegetation": {
+      "label": "Roof vegetation",
+      "model_probability": 0.8729
+    },
+    "rooftop-hvac": {
+      "label": "Rooftop HVAC",
+      "model_probability": 0.9327
     }
   },
   "score_semantics": "official_source and engineering_confidence scores describe provenance/derivation reliability; model_probability values are raw neural-network outputs and are not calibrated confidence estimates.",
   "solar_potential": {
-    "annual_yield_kwh_m2a": 1117.278,
-    "pv_area_good_m2": 104,
-    "pv_area_medium_m2": 8,
-    "pv_area_very_good_m2": 12,
-    "theoretical_pv_capacity_kwp": 7
+    "annual_yield_kwh_m2a": 1155.647,
+    "pv_area_good_m2": 1944,
+    "pv_area_medium_m2": 58,
+    "pv_area_very_good_m2": 164,
+    "theoretical_pv_capacity_kwp": 97
   },
   "sources_used": {
     "imagery": "Stadt Wien Orthophoto",
